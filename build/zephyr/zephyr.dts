@@ -893,6 +893,7 @@
 			#pwm-cells = < 0x3 >;
 			pinctrl-0 = < &pwm0_gpio053 >;
 			pinctrl-names = "default";
+			phandle = < 0x5e >;
 		};
 		pwm1: pwm@40005810 {
 			compatible = "microchip,xec-pwm";
@@ -1128,6 +1129,13 @@
 		button0: button_0 {
 			gpios = < &gpio_140_176 0x12 0x11 >;
 			label = "User Button";
+		};
+	};
+	pwmleds {
+		compatible = "pwm-leds";
+		pwm_led0: pwm_led_0 {
+			pwms = < &pwm0 0x0 0x1312d00 0x0 >;
+			label = "PWM_LED0";
 		};
 	};
 };

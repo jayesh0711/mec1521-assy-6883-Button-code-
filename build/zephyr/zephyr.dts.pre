@@ -2320,7 +2320,7 @@
 };
 # 0 "<command-line>" 2
 # 1 "/home/jayesh/zephyrproject/zephyr/samples/basic/button/mec15xxevb_assy6853.overlay" 1
-# 42 "/home/jayesh/zephyrproject/zephyr/samples/basic/button/mec15xxevb_assy6853.overlay"
+# 18 "/home/jayesh/zephyrproject/zephyr/samples/basic/button/mec15xxevb_assy6853.overlay"
 / {
     aliases {
         sw0 = &button0;
@@ -2333,6 +2333,17 @@
             label = "User Button";
         };
     };
+
+
+    pwmleds {
+        compatible = "pwm-leds";
+
+        pwm_led0: pwm_led_0 {
+            pwms = <&pwm0 0 20000000 0>;
+            label = "PWM_LED0";
+        };
+    };
+
 };
 # 0 "<command-line>" 2
 # 1 "/home/jayesh/zephyrproject/zephyr/misc/empty_file.c"
